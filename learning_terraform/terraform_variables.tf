@@ -1,0 +1,11 @@
+variable "instance_name" {
+  description = "Value of the Name tag for the EC2 instance"
+  type        = string
+  default     = "jass_instance"
+}
+
+variable "aws_secret_access_key" {
+  type        = string
+  description = "AWS Secret Access Key"
+  sensitive   = true
+}

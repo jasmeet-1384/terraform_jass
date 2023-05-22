@@ -24,6 +24,6 @@ resource "aws_instance" "jass_app_server" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "jass_instance"
+    Name = var.instance_name
   }
 }
