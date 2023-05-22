@@ -4,7 +4,7 @@ variable "instance_name" {
   default     = "jass_instance"
 }
 
-variable "aws_secret_access_key" {
+variable "aws_secret_key" {
   type        = string
   description = "AWS Secret Access Key"
   sensitive   = true
