@@ -3,9 +3,3 @@ variable "instance_name" {
   type        = string
   default     = "jass_instance"
 }
-
-variable "aws_secret_access_key" {
-  type        = string
-  description = "AWS Secret Access Key"
-  sensitive   = true
-}
