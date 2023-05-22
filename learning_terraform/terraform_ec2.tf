@@ -1,4 +1,10 @@
 terraform {
+  backend "remote" {
+    organization = "hashicrop-learn-jass"
+    workspaces {
+      name = "terraform_jass"
+    }
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -10,7 +16,7 @@ terraform {
 }
 
 provider "aws" {
-  region  = "ap-south-1"
+  region = "ap-south-1"
 }
 
 resource "aws_instance" "jass_app_server" {
