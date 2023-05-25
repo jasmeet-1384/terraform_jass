@@ -1,4 +1,5 @@
 #create Secuirty Group -SSH Traffic
+
 resource "aws_security_group" "vpc-ssh-jass" {
   name        = "vpc-ssh-jass"
   description = "VPC SSH"
