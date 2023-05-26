@@ -38,3 +38,9 @@ output "legacy_splat_instance_publicdns" {
   description = "Legacy Splat Expression"
   value = aws_instance.jass_app_server.*.public_dns
 }
+
+# Output Latest Generalized Splat Operator - Returns the List
+output "latest_splat_instance_publicdns" {
+  description = "Generalized Splat Expression"
+  value = aws_instance.jass_app_server[*].public_dns
+}
