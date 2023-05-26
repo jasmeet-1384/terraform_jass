@@ -15,7 +15,8 @@ output "instance_public_ipv4_DNS" {
 }
 
 # Output -For Loop with List
-Output "for_output_list" {
+output "for_output_list" {
   description = "For loop with list"
   value = [for insatnce in aws_instance.jass_app_server: insatnce.public_ip]
 }
+
