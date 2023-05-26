@@ -25,8 +25,9 @@ instance_type = var.instance_type_map["prod"]
    for_each = toset(data.aws_availability_zones.my_azones.names)
   availability_zone = each.key # You can also use each.value because for list items each.key == each.value
    
-count = var.vm_count
+# count = var.vm_count
   tags = {
-    Name = "${var.instance_name}-${count.index}-${each.key}"
+    # Name = "${var.instance_name}-${count.index}-${each.key}"
+    Name = "${var.instance_name}-${each.key}"
   }
 }
