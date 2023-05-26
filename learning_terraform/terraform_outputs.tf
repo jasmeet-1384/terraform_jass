@@ -44,3 +44,31 @@ output "latest_splat_instance_publicdns" {
   description = "Generalized Splat Expression"
   value = aws_instance.jass_app_server[*].public_dns
 }
+
+# EC2 Instance Public IP with TOSET
+output "instance_public_ip" {
+  description = "EC2 instance public IP"
+  value = toset([
+    for instance in aws_instance.jass_app_server: jass_app_server.public_ip
+  ])
+}
+
+
+# EC2 Instance Public DNS with TOSET
+output "instance_public_DNS" {
+  description = "EC2 Instance public DNS"
+  value = toset([
+    for instance in aws_instance.jass_app_server: jass_app_server.public_dns
+  ])
+  
+}
+
+# EC2 Instance Public DNS with MAPS (tomap)
+output "instance_public_dns_map" {
+  description = "EC2 Instance with public DNS Maps"
+  value = tomap({
+    for s, instance in aws_aws_instance.jass_app_server : s => jass_app_server.public_dns 
+    # S intends to be a subnet ID
+  })
+  
+}
