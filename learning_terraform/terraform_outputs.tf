@@ -21,3 +21,9 @@ output "instance_public_ipv4_DNS" {
   
 # }
 
+# Output - For Loop with Map
+output "for_output_map1" {
+  description = "For Loop with Map"
+  value = {for instance in aws_instance.jass_app_server: instance.id => instance.public_dns}
+}
+
