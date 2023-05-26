@@ -11,7 +11,8 @@ instance_type = var.instance_type_map["prod"]
     aws_security_group.vpc-ssh-jass.id
    ]
 
+count = 2 
   tags = {
-    Name = var.instance_name
+    Name = "jass_instance-${count.index}"
   }
 }
