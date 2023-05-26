@@ -4,7 +4,7 @@ resource "aws_instance" "jass_app_server" {
 #   instance_type = var.instance_type This is for singal value given
 # instance_type = var.instance_type_list[1] This is for list type instance
 # For Map Type - Instance Type
-instance_type = var.instance_type_map["prod , dev"]
+instance_type = var.instance_type_map["prod" ]
   key_name = var.insatance_key_pair
   user_data     = file("${path.module}/jass.sh")
   vpc_security_group_ids = [ 
