@@ -1,9 +1,9 @@
 #Name Tag Variable
-# variable "instance_name" {
-#   description = "Value of the Name tag for the EC2 instance"
-#   type        = string
-#   default     = "jass_instance"
-# }
+variable "instance_name" {
+  description = "Value of the Name tag for the EC2 instance"
+  type        = string
+  default     = "jass_instance"
+}
 
 #AWS Region
 variable "aws_region" {
