@@ -44,3 +44,12 @@ variable "instance_type_map" {
     "prod" = "t2.large"
   }
 }
+
+
+#count(Number of virtual machines)
+variable "vm_count" {
+  description = "Number of virtual Machines"
+  type = string
+  default = 2
+  
+}
