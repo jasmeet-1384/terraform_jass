@@ -13,3 +13,8 @@ output "instance_public_ipv4_DNS" {
   description = "Public IPv4 DNS address of the EC2 instance"
   value       = aws_instance.jass_app_server.public_dns
 }
+
+# Output -For Loop with List
+Output "for_output_list" {
+  
+}
