@@ -32,3 +32,9 @@ output "for_output_map2" {
   description = "For Loop with Map - Advanced"
   value = {for c, instance in aws_instance.jass_app_server: c => instance.public_dns}
 }
+
+# Output Legacy Splat Operator (latest) - Returns the List
+output "legacy_splat_instance_publicdns" {
+  description = "Legacy Splat Expression"
+  value = aws_instance.jass_app_server.*.public_dns
+}
