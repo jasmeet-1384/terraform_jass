@@ -23,3 +23,18 @@ data "aws_ami" "amz-linux2" {
     values = ["x86_64"]
   }
 }
+
+# EC2 Instance Type Offerings
+data "aws_ec2_instance_type_offerings" "my_instance_type" {
+  filter {
+    name   = "instance-type"
+    values = ["t2.large"]
+  }
+
+  filter {
+    name   = "location"
+    values = ["ap-south-1c"]
+  }
+
+  location_type = "availability-zone-id"
+}
