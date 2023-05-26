@@ -33,7 +33,7 @@ data "aws_ec2_instance_type_offerings" "my_instance_type" {
 
   filter {
     name   = "location"
-    values = ["ap-south-1c"]
+    values = ["ap-south-1b"]
   }
 
   location_type = "availability-zone-id"
