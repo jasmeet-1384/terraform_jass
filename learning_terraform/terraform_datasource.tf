@@ -26,6 +26,7 @@ data "aws_ami" "amz-linux2" {
 
 # EC2 Instance Type Offerings
 data "aws_ec2_instance_type_offerings" "my_instance_type" {
+  for_each = toset([ "ap-south-1a", "ap-south-1b", "ap-south-1c" ]) 
   filter {
     name   = "instance-type"
     values = ["t2.large"]
@@ -33,8 +34,8 @@ data "aws_ec2_instance_type_offerings" "my_instance_type" {
 
   filter {
     name   = "location"
-    values = ["ap-south-1b"]
+    values = [each.key]
   }
 
-  location_type = "availability-zone-id"
+  location_type = "availability-zone"
 }
