@@ -78,7 +78,7 @@ output "instance_public_dns_map" {
 
 # output EC2 instance offerings
 output "output_jass" {
-  value = toset(data.aws_ec2_instance_type_offerings.my_instance_type.instance_types)
+  value = data.aws_ec2_instance_type_offerings.my_instance_type.instance_types
 
 }
 
