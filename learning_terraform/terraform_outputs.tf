@@ -78,7 +78,7 @@ output "instance_public_dns_map" {
 
 # output EC2 instance offerings foreach is set
 output "output_jass" {
-  value = toset([for t in data.data.aws_ec2_instance_type_offerings.my_instance_type : t.var.instance_types])
+  value = toset([for t in data.data.aws_ec2_instance_type_offerings.my_instance_type : t.instance_types])
 
 }
 
