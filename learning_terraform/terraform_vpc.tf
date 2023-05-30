@@ -5,21 +5,21 @@ module "vpc" {
 
 
   # VPC Basic Details
-  name = "my-vpc-jass"
-  cidr = "10.0.0.0/16"
+  name = var.vpc_name
+  cidr = var.vpc_cidr
 
-  azs             = ["ap-south-1a", "ap-south-1b"]
-  private_subnets = ["10.0.1.0/24", "10.0.2.0/24"]
-  public_subnets  = ["10.0.101.0/24", "10.0.102.0/24"]
+  azs             = var.availability_zone
+  private_subnets = var.vpc_private_subnet
+  public_subnets  = var.vpc_public_subnet
 
   # Database Subnets
-  create_database_subnet_group       = true
-  create_database_subnet_route_table = true
-  database_subnets                   = ["10.0.21.0/24", "10.0.22.0/24"]
+  create_database_subnet_group       = var.vpc_create_database_subnet_group
+  create_database_subnet_route_table = var.vpc_create_database_subnet_route_table
+  database_subnets                   = var.vpc_database_subnet
 
   # NAT Gateways - Outbound Communication
-  enable_nat_gateway = true
-  single_nat_gateway = true
+  enable_nat_gateway = var.vpc_enable_nat_gateway
+  single_nat_gateway = var.vpc_single_nat_gateway
 
   # VPC DNS Parameters
   enable_dns_hostnames = true
@@ -38,13 +38,7 @@ module "vpc" {
     Type = "database-subnets"
   }
 
-  tags = {
-    Terraform   = "true"
-    Environment = "dev"
-  }
-
-  vpc_tags = {
-    Name = "my-vpc-jass"
-  }
+  tags = local.common_tags
+  vpc_tags = local.common_tags
 
 }

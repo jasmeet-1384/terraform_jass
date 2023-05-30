@@ -111,3 +111,15 @@ output "output_jass6" {
   value = keys({ for az, details in data.aws_ec2_instance_type_offerings.my_instance_type :
   az => details.instance_types if length(details.instance_types) != 0 })[0]
 }
+
+# VPC ID
+output "vpc_id" {
+  description = "The ID of the VPC"
+  value       = module.vpc.vpc_id
+}
+
+# VPC CIDR blocks
+output "vpc_cidr_block" {
+  description = "The CIDR block of the VPC"
+  value       = module.vpc.vpc_cidr_block
+} 
