@@ -102,8 +102,8 @@ output "output_jass4" {
 # Filtered Output: with Keys Function - Which gets keys from a Map
 # This will return the list of availability zones supported for a instance type
 output "output_jass5" {
-  value = keys({ for az, details in data.aws_ec2_instance_type_offerings.my_instance_type :
-  az => details.instance_types if length(details.instance_types) != 0 }) 
+  value =toset( keys({ for az, details in data.aws_ec2_instance_type_offerings.my_instance_type :
+  az => details.instance_types if length(details.instance_types) != 0 }) )
 }
 
 # Filtered Output: As the output is list now, get the first item from list (just for learning)
