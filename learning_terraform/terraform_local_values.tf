@@ -5,7 +5,7 @@ locals {
   name = "${var.department}-${var.environment}"
 
   common_tags = {
-    owners = locals.owners
-    environment = locals.environment
+    owners = local.owners
+    environment = local.environment
   }
 }
