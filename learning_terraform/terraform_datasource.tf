@@ -24,6 +24,14 @@ data "aws_ami" "amz-linux2" {
   }
 }
 
+#Availability_zone
+data "aws_availability_zones" "my_azones" {
+  filter {
+    name   = "opt-in-status"
+    values = ["opt-in-not-required"]
+  }
+}
+
 # EC2 Instance Type Offerings
 data "aws_ec2_instance_type_offerings" "my_instance_type" {
   for_each = toset([ "ap-south-1a", "ap-south-1b" ]) 
