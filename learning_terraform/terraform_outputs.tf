@@ -86,3 +86,22 @@ output "output_jass" {
 output "output_jass2" {
   value = {for ja, jass in data.aws_ec2_instance_type_offerings.my_instance_type : ja => jass.instance_types}
 }
+
+# Basic Output: All Availability Zones mapped to Supported Instance Types
+output "output_jass3" {
+ value = { for az, details in data.aws_ec2_instance_type_offerings.my_instance_type :
+  az => details.instance_types }   
+}
+
+# Filtered Output: Exclude Unsupported Availability Zones
+output "output_jass4" {
+  value = { for az, details in data.aws_ec2_instance_type_offerings.my_instance_type :
+  az => details.instance_types if length(details.instance_types) != 0 }
+}
+
+# Filtered Output: with Keys Function - Which gets keys from a Map
+# This will return the list of availability zones supported for a instance type
+output "output_jass5" {
+  value = keys({ for az, details in data.aws_ec2_instance_type_offerings.my_instance_type :
+  az => details.instance_types if length(details.instance_types) != 0 }) 
+}
