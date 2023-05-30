@@ -34,7 +34,7 @@ module "vpc" {
     Type = "private-subnets"
   }
 
-  database_subnets_tags = {
+  database_subnet_tags = {
     Type = "database-subnets"
   }
 
