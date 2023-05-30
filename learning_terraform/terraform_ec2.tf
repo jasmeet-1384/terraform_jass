@@ -20,8 +20,8 @@ instance_type = var.instance_type #This is for singal value given
   # availability_zone = each.key # You can also use each.value because for list items each.key == each.value
 
   # Create EC2 Instance in all Availabilty Zones of a VPC
-   for_each = toset({ for az, details in data.aws_ec2_instance_type_offerings.my_instance_type :
-  az => details.instance_types if length(details.instance_types) != 0 })
+   for_each = toset(keys({ for az, details in data.aws_ec2_instance_type_offerings.my_instance_type :
+  az => details.instance_types if length(details.instance_types) != 0 }))
   availability_zone = each.key # You can also use each.value because for list items each.key == each.value
    
 # count = var.vm_count
