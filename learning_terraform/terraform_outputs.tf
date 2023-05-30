@@ -105,3 +105,9 @@ output "output_jass5" {
   value = keys({ for az, details in data.aws_ec2_instance_type_offerings.my_instance_type :
   az => details.instance_types if length(details.instance_types) != 0 }) 
 }
+
+# Filtered Output: As the output is list now, get the first item from list (just for learning)
+output "output_jass6" {
+  value = keys({ for az, details in data.aws_ec2_instance_type_offerings.my_instance_type :
+  az => details.instance_types if length(details.instance_types) != 0 })[0]
+}
