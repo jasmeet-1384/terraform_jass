@@ -16,7 +16,7 @@ variable "aws_region" {
 variable "instance_type" {
   description = "EC2 Insatnce Type"
   type = string
-  default = "t2.large"
+  default = "t2.micro"
 }
 
 #AWS EC2 Instance Key Pair
@@ -38,11 +38,11 @@ variable "instance_type_list" {
 variable "instance_type_map" {
   description = "EC2 Instance Type Map"
   type = map(string)
-  default = {
-    "dev" = "t2.micro"
-    "qa" = "t3.micro"
-    "prod" = "t2.large"
-  }
+  # #default = {
+  #   "dev" = "t2.micro"
+  #   "qa" = "t3.micro"
+  #   "prod" = "t2.large"
+  # }
 }
 
 
@@ -50,7 +50,7 @@ variable "instance_type_map" {
 variable "vm_count" {
   description = "Number of virtual Machines"
   type = string
-  default = 2
+  #default = 2
   
 }
 
@@ -58,7 +58,7 @@ variable "vm_count" {
 variable "environment" {
   description = "Environment variable used as a prefix"
   type = string
-  default = "dev"
+  #default = "dev"
   
 }
 
@@ -66,7 +66,7 @@ variable "environment" {
 variable "department" {
   description = "department- this Infrastructure belongs"
   type = string
-  default = "IT"
+  #default = "IT"
 }
 
 
@@ -74,68 +74,68 @@ variable "department" {
 variable "vpc_name" {
   description = "VPC Name"
   type = string
-  default = "my-vpc-jass"
+  ##default = "my-vpc-jass"
 }
 
 # VPC CIDR
 variable "vpc_cidr" {
   description = "VPC CIDR Block"
   type = string
-  default = "10.0.0.0/16"
+  ##default = "10.0.0.0/16"
 }
 
 # VPC Availability Zones
  variable "availability_zone" {
    description = "Availability Zone"
    type = list(string)
-   default = [ "ap-south-1a", "ap-south-1b" ]
+   ##default = [ "ap-south-1a", "ap-south-1b" ]
  }
 
 # VPC Public Subnets
 variable "vpc_public_subnet" {
   description = "VPC Public Subnet"
   type = list(string)
-  default = [ "10.0.1.0/24", "10.0.2.0/24" ]
+  ##default = [ "10.0.1.0/24", "10.0.2.0/24" ]
 }
 
 # VPC Private Subnets
 variable "vpc_private_subnet" {
   description = "VPC Private Subnet"
   type = list(string)
-  default = [ "10.0.101.0/24", "10.0.102.0/24" ]
+  #default = [ "10.0.101.0/24", "10.0.102.0/24" ]
 }
 
 # VPC Database Subnets
 variable "vpc_database_subnet" {
   description = "VPC Database Subnet"
   type = list(string)
-  default = [ "10.0.21.0/24", "10.0.22.0/24" ]
+  #default = [ "10.0.21.0/24", "10.0.22.0/24" ]
 }
 
 # VPC Create Database Subnet Route Table (True or False)
 variable "vpc_create_database_subnet_group" {
   description = "VPC Create Database Subnet Group"
   type = bool
-  default = true
+  #default = true
 }
 
 # VPC Create Database Subnet Route Table (True or False)
 variable "vpc_create_database_subnet_route_table" {
   description = "VPC Create Database Subnet Route Table"
   type = bool
-  default = true
+  #default = true
 }
 
 # VPC Create Database Subnet Route Table (True or False)
 variable "vpc_enable_nat_gateway" {
   description = "VPC Enable Nat Gateway"
   type = bool
-  default = true
+  #default = true
 }
 
 # VPC Create Database Subnet Route Table (True or False)
 variable "vpc_single_nat_gateway" {
   description = "VPC Single Nat Gateway"
   type = bool
-  default = true
+  #default = true
 }
