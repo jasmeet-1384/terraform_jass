@@ -78,7 +78,7 @@ variable "vpc_name" {
 }
 
 # VPC CIDR
-variable "vpc_cidr" {
+variable "vpc_cidr_block" {
   description = "VPC CIDR Block"
   type = string
   ##default = "10.0.0.0/16"
@@ -92,21 +92,21 @@ variable "vpc_cidr" {
  }
 
 # VPC Public Subnets
-variable "vpc_public_subnet" {
+variable "vpc_public_subnets" {
   description = "VPC Public Subnet"
   type = list(string)
   ##default = [ "10.0.1.0/24", "10.0.2.0/24" ]
 }
 
 # VPC Private Subnets
-variable "vpc_private_subnet" {
+variable "vpc_private_subnets" {
   description = "VPC Private Subnet"
   type = list(string)
   #default = [ "10.0.101.0/24", "10.0.102.0/24" ]
 }
 
 # VPC Database Subnets
-variable "vpc_database_subnet" {
+variable "vpc_database_subnets" {
   description = "VPC Database Subnet"
   type = list(string)
   #default = [ "10.0.21.0/24", "10.0.22.0/24" ]
