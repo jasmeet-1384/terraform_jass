@@ -54,7 +54,7 @@ data "aws_ec2_instance_type_offerings" "my_instance_type" {
   for_each = toset(data.aws_availability_zones.my_azones.names)
   filter {
     name   = "instance-type"
-    values = ["t2.large"]
+    values = ["t2.large"] 
   }
 
   filter {
