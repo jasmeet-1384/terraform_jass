@@ -10,7 +10,7 @@ module "ec2_private" {
   user_data = file("${path.module}/jass.sh")
   #subnet_id = module.vpc.public_subnets[0]
   vpc_security_group_ids = [module.security-group_private.this_security_group_id]
-  instance_count = 2
+  instance_count = var.vm_count
   subnet_id = [
     module.vpc.private_subnets[0],
     module.vpc.private_subnets[1]
