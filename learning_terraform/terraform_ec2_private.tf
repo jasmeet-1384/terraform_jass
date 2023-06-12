@@ -8,11 +8,10 @@ module "ec2_private" {
   instance_type = var.instance_type
   key_name      = var.insatance_key_pair
   user_data     = file("${path.module}/jass.sh")
-  vpc_security_group_ids = [module.sg-private.this_security_group_id]
+  vpc_security_group_ids = [module.security-group-private.this_security_group_id]
   count                  = var.vm_count
-  subnet_id = [
-    module.vpc.private_subnets
+  subnet_id = module.vpc.private_subnets
     
-  ]
+  
   tags = local.common_tags
 } 
