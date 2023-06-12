@@ -1,6 +1,6 @@
 module "security-group-private" {
   source  = "terraform-aws-modules/security-group/aws"
-  version = "5.1.0"
+  version = "3.18.0"
 
 
   name        = "private_jass_SG"
