@@ -26,3 +26,6 @@ instance_type_map = {
 }
 
 
+#security group name public
+name = "jass_sg"
+

@@ -139,3 +139,10 @@ variable "vpc_single_nat_gateway" {
   type = bool
   #default = true
 }
+
+
+#sg name 
+variable "name" {
+  type = string
+
+}
