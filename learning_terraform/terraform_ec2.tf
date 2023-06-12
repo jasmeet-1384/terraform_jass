@@ -1,6 +1,5 @@
 
-
-
+/*
 
 #resource: EC2 Instance
 resource "aws_instance" "jass_app_server" {
@@ -30,3 +29,4 @@ instance_type = var.instance_type #This is for singal value given
     Name = "${var.instance_name}-${each.key}"
   }
 }
+*/
