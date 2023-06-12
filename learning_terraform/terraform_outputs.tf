@@ -45,7 +45,7 @@
 #   description = "Generalized Splat Expression"
 #   value = aws_instance.jass_app_server[*].public_dns
 # }
-
+/*
 # EC2 Instance Public IP with TOSET
 output "instance_public_ip" {
   description = "EC2 instance public IP"
@@ -111,7 +111,7 @@ output "output_jass6" {
   value = keys({ for az, details in data.aws_ec2_instance_type_offerings.my_instance_type :
   az => details.instance_types if length(details.instance_types) != 0 })[0]
 }
-
+*/
 # VPC ID
 output "vpc_id" {
   description = "The ID of the VPC"

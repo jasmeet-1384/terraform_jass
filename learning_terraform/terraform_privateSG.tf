@@ -1,4 +1,4 @@
-module "security-group_private" {
+module "security-group-private" {
   source  = "terraform-aws-modules/security-group/aws"
   version = "5.1.0"
 

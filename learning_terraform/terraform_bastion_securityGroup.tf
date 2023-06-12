@@ -1,4 +1,4 @@
-module "security-group_bastion_public" {
+module "sg-bastion-public" {
   source  = "terraform-aws-modules/security-group/aws"
   version = "5.1.0"
 
