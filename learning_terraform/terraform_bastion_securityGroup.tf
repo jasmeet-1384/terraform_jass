@@ -3,7 +3,7 @@ module "sg-bastion-public" {
   version = "5.1.0"
 
 
- # name_prefix        = "public_jass_SG"
+  name        = "public-sg-jass"
   description = "Security group with SSH port open for everybody (IPv4 CIDR), egress ports are all world open"
   vpc_id      = module.vpc.vpc_id
 
