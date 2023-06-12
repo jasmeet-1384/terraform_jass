@@ -5,7 +5,7 @@ module "vpc" {
 
 
   # VPC Basic Details
-  name = var.vpc_name
+  name ="${local.name}-${var.vpc_name}"
   cidr = var.vpc_cidr_block
 
   azs             = var.availability_zone

@@ -24,3 +24,4 @@ instance_type_map = {
   "qa"   = "t3.micro"
   "prod" = "t2.large"
 }
+

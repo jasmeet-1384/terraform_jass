@@ -1,5 +1,5 @@
-#create Secuirty Group -SSH Traffic
-
+#create Secuirty Group -SSH Traffic with Resources
+/*
 resource "aws_security_group" "vpc-ssh-jass" {
   name        = "vpc-ssh-jass"
   description = "VPC SSH"
@@ -37,4 +37,14 @@ resource "aws_security_group" "vpc-ssh-jass" {
   tags = {
     Name = "Vpc-ssh-jass"
   }
+}
+
+*/
+
+#create Secuirty Group -SSH Traffic with Modules
+
+module "security-group" {
+  source  = "terraform-aws-modules/security-group/aws"
+  version = "5.1.0"
+
 }
