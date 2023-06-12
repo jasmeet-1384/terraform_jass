@@ -5,7 +5,7 @@ output "public_bastion_sg_group_id" {
 }
 output "public_bastion_sg_group_vpc_id" {
   description = "The VPC ID"
-  value       = module.sg-bastion-public.this_security_group_vpc_id
+  value       = module.sg-bastion-public.security_group_vpc_id
 }
 output "public_bastion_sg_group_name" {
   description = "The name of the security group"
