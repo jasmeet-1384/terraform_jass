@@ -11,7 +11,7 @@ module "ec2_private" {
   #subnet_id = module.vpc.public_subnets[0]
   vpc_security_group_ids = [module.security-group_private.this_security_group_id]
   instance_count = 2
-  subnet_ids = [
+  subnet_id = [
     module.vpc.private_subnets[0],
     module.vpc.private_subnets[1]
   ]

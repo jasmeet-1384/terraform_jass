@@ -25,3 +25,4 @@ instance_type_map = {
   "prod" = "t2.large"
 }
 
+
