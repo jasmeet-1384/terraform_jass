@@ -3,6 +3,7 @@ aws_region  = "ap-south-1"
 environment = "dev"
 department  = "IT"
 
+
 #VPC Variables
 vpc_name                               = "myvpc-jass"
 vpc_cidr_block                         = "10.0.0.0/16"
@@ -25,6 +26,7 @@ instance_type_map = {
   "prod" = "t2.large"
 }
 
+private_instance_count = 2
 
 #security group name public
 name = "jass_sg"
