@@ -3,7 +3,7 @@ module "security-group-private" {
   version = "5.1.0"
 
 
-  name        = var.name
+  name        = "${local.name}-Private-SG"
   description = "Security group with HTTP & SSH ports open for everybody (IPv4 CIDR), egress ports are all world open"
   vpc_id      = module.vpc.vpc_id
 
