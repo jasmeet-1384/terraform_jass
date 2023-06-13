@@ -154,7 +154,7 @@ variable "private_instance_count" {
 }
 
 #subnet_ids
-variable "subnet_ids" {
+variable "subnet_id" {
   type = list(string)
   default     = []
 }
