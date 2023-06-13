@@ -26,7 +26,7 @@ instance_type_map = {
   "prod" = "t2.large"
 }
 
-private_instance_count = 2
+private_instance_count = 1
 
 #security group name public
 name = "jass_sg"
