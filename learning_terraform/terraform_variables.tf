@@ -146,3 +146,9 @@ variable "name" {
   type = string
 
 }
+
+#private instance count
+variable "private_instance_count" {
+  type = string
+  
+}
