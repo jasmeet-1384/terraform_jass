@@ -7,7 +7,7 @@ module "ec2_private" {
 
   for_each = toset(["0","1"])
 
-  name          = "${var.environment}-Jass-VM-${eack.key}"
+  name          = "${var.environment}-Jass-VM-${each.key}"
   ami           = data.aws_ami.amz-linux2.id
   instance_type = var.instance_type
   key_name      = var.insatance_key_pair
