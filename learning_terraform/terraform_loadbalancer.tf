@@ -39,7 +39,7 @@ module "elb" {
 
   // ELB attachments
   number_of_instances = var.private_instance_count
-  instances = module.ec2_private.id
+  instances = [module.ec2_private.id]
     
   
   
