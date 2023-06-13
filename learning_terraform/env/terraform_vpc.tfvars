@@ -31,3 +31,4 @@ private_instance_count = 1
 #security group name public
 name = "jass_sg"
 
+subnet_id = []
