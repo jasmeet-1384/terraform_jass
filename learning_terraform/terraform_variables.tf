@@ -155,6 +155,6 @@ variable "private_instance_count" {
 
 #subnet_ids
 variable "subnet_id" {
-  type = string
+  type =list(string)
   #default     = []
 }
