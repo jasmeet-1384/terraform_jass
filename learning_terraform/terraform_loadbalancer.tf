@@ -40,7 +40,7 @@ module "elb" {
   // ELB attachments
   number_of_instances = var.private_instance_count
   instances = [
-    module.ec2_private.elb_id
+    module.ec2_private.elb_id[0]
   ]
 
   tags = local.common_tags
