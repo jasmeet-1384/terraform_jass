@@ -152,3 +152,8 @@ variable "private_instance_count" {
   type = string
   
 }
+
+#subnet_ids
+variable "subnet_ids" {
+  type = list(string)
+}
